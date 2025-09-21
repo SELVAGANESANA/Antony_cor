@@ -1,0 +1,586 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: content-box;
+}
+
+:root {
+    --color1: #9333EA;
+    --color2: #DB2777;
+    --linercolor: linear-gradient(to right, #9333EA, #DB2777);
+    --para:rgb(66, 66, 66);
+}
+
+
+.canone {
+    width: 100%;
+    height: 100vh;
+    background: var(--linercolor);
+    display: flex;
+    align-items: center;
+    
+
+}
+
+.canoneboxinner{
+   
+    animation-name: canoneboxin;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+    animation-duration: 3s;
+    
+}
+
+.canonebox {
+    height: 400px;
+    width: 700px;
+    background-color: white;
+    margin-left: 10%;
+    border-radius: 20px;
+    color: black;
+    padding: 25px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation-name: canone;
+    animation-duration: 2s;
+}
+
+@keyframes canone {
+    0%{
+        opacity: 0;
+        width: 50px;
+    }
+    100%{
+        width: 700px;
+        opacity: 1;
+        /* color: transparent; */
+    }
+   
+}
+
+@keyframes canoneboxin {
+    from{
+        scale: 0;
+    }
+    to{
+        scale: 1;
+       
+    }
+}
+
+.allconebox {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 20px 10px;
+}
+
+.cone-box {
+    padding: 7px 15px;
+    border: 2px solid black;
+    border-radius: 20px;
+
+}
+
+.cone-box1 {
+    border: 2px solid purple;
+    color: purple;
+}
+
+.cone-box2 {
+    border: 2px solid #DB2777;
+    color: #DB2777;
+}
+
+.cone-box3 {
+    border: 2px solid #9333EA;
+    color: #9333EA;
+}
+
+
+.canonebox h1 {
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.canonebox h1 span {
+    color: #9333EA;
+}
+
+.canonebox p{
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-content: center;
+ 
+}
+
+.canonebox p p {
+    display: inline;
+    color: #DB2777;
+    font-weight: 200;
+}
+
+.canonebox p {
+    font-size: 20px;
+    
+}
+
+.canonebox button {
+    padding: 15px 20px;
+    display: inline;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 280px;
+    margin-top: 30px;
+    background: var(--linercolor);
+}
+
+
+          /* Cantwo  */
+
+
+.cantwo{
+    /* width: 100%; */
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cantwo h2{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.cantwo p{
+    font-size: 20px;
+    color:var(--para);
+}
+
+                   /* Canthree  */
+
+.canthree{
+    padding: 20px 10px;
+    background-color: rgb(251, 222, 242);
+}
+
+.canthr-tlt h1{
+   text-align: center;
+   padding: 20px 20px;
+}
+
+.canthre-cont{
+  
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+
+}
+
+.canthre-cont p{
+    font-size: 20px;
+}
+
+.canthre-right, .canthre-left{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px;
+    color: var(--para);
+
+}
+
+
+                   /* Canfour  */
+
+.canfour{
+    padding: 40px 10px;
+
+}
+
+.canfourtlt{
+    text-align: center;
+}
+
+
+.canfour-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.canfourbox{
+    height: 100px;
+    width: 310px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 30px;
+    gap: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.canfourbox:hover{
+    box-shadow: 8px 8px 10px rgba(0,0,0,0.5);
+}
+
+.canfour-box a{
+    font-size: 30px;
+}
+
+.canfive{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 4%;
+}
+
+.canfivetitle{
+    text-align: center;
+}
+
+.canfivebox{
+    width: 400px;
+    padding: 25px;
+   
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2) ;
+
+}
+
+.canfivebox:hover{
+    scale: 1.02;
+}
+
+.canfivebox-all{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 20px;
+
+}
+
+.canfivebox-tlt{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.canfivebox-tlt span{
+    /* background: rgb(252, 183, 239); */
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 30px;
+    color: purple;
+}
+
+.canfivebox h1{
+    font-size: 25px;
+}
+
+           /* CanSix  */
+
+.cansix{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    background: var(--linercolor);
+    color: white;
+}
+
+.cansixbox-cont{
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.cansixbox{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    /* background-color:rgba(211, 32, 220, 0.4); */
+    box-shadow: 0px 0 1px;
+    padding: 20px 30px;
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.cansixbox{
+    text-align: center;
+}
+
+.cansixbox h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.canseven{
+    
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; 
+    font-weight: 500;
+}
+
+.canseven h1{
+    display: flex;
+    align-items: center;
+    
+    color: #9333EA;
+    font-size: 30px;
+
+}
+
+.canseven button{
+       padding: 15px 20px;
+    display: inline;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    width: 280px;
+    margin-top: 30px;
+    background: var(--linercolor);
+}
+
+.canseven b{
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: red;
+}
+
+
+                /* CanEight  */
+
+
+
+.caneight {
+  padding: 40px 30px;
+  padding-bottom: 70px;
+  text-align: center;
+  background: #f9f9f9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: rgb(243, 235, 235);
+}
+
+.scroll-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-content {
+  display: flex;
+  gap: 50px;
+  animation: scroll-left 30s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.caneight-box {
+  min-width: 220px;
+  max-width: 280px;
+  padding: 25px 20px 40px 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: start;
+  border-radius: 12px;
+  box-shadow: 4px 4px 6px rgba(193, 188, 192, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caneight-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 12px rgba(193, 188, 192, 0.7);
+}
+
+.caneight-box span {
+  font-size: 16px;
+  color: gold;
+}
+
+.caneight-box p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.canei-boxadd {
+  display: flex;
+  justify-content: start;
+  gap: 15px;
+  align-items: center;
+  margin-top: auto;
+}
+
+.canei-left {
+  height: 45px;
+  width: 45px;
+  background-color: pink;
+  color: purple;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canei-left span{
+    color: purple;
+}
+
+.canei-right h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.canei-right p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.cannine{
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+}
+
+.cannine-content{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.canninebox{
+    width: 70%;
+    padding: 30px;
+   background: #ede7e7;
+    display: flex;
+    flex-direction: column;
+    border-radius: 14px;
+  
+    gap: 20px;
+}
+
+.canninebox h2{
+    color: black;
+    font-weight: 400;
+    font-size: 23px;
+}
+
+.canninebox p{
+    color: var(--para);
+}
+
+
+            /* Canregis  */
+
+.canregis{
+
+    padding: 40px 20px ;
+    background-color: rgb(248, 228, 231);
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.canregis p{
+    font-size: 20px;
+    color: var(--para);
+}
+
+form{
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    gap: 22px;
+    margin: 20px;
+}
+
+input{
+  
+    padding: 15px 10px;
+    border-radius: 5px;
+    background-color: rgb(239, 230, 230);
+    border: none;
+    font-size: 16px;
+}
+
+form button{
+    padding: 15px 20px;
+    display: inline;
+    border-radius: 10px;
+    font-size: 19px;
+    font-weight: 500;
+    width: 280px;
+    margin-top: 30px;
+    background: var(--linercolor);
+
+}
