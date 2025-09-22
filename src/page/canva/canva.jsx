@@ -23,7 +23,7 @@ import { GoInfinity } from "react-icons/go";
 import { GiLaurelsTrophy } from "react-icons/gi";
 import { GiDrippingStar } from "react-icons/gi";
 const Canva = () => {
-
+     const navigate = useNavigate();
     const canthree = ["Eye-catching social media posts",
         "YouTube thumbnails & digital graphics",
         "Flyers, posters & banners for events",
@@ -191,7 +191,7 @@ const Canva = () => {
     });
 
     const [isLoading, setIsLoading] = useState(false);
-    const navigate = useNavigate();
+   
 
     // Handle input changes
     const handleChange = (e) => {
@@ -199,35 +199,31 @@ const Canva = () => {
     };
 
     // Razorpay integration
-    const handleSubmit = async (e) => {
+   const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
 
         try {
-            // 1. Create order on backend
+            // Create order
             const orderRes = await fetch("http://localhost:5000/create-order", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    amount: 499,
-                    ...formData,
-                }),
+                body: JSON.stringify({ amount: 499 })
             });
-
             const orderData = await orderRes.json();
             if (!orderData.success) {
+                alert("Error creating order.");
                 setIsLoading(false);
-                alert("Error creating order. Please try again.");
                 return;
             }
 
-            // 2. Open Razorpay checkout popup
+            // Razorpay checkout options
             const options = {
-                key: "rzp_test_v3gEhWzOtCcolK", // replace with your live key
+                key: "rzp_test_v3gEhWzOtCcolK", // Replace with your key
                 amount: orderData.order.amount,
                 currency: "INR",
-                name: "Canva",
-                description: formData.course,
+                name: "Canva Pro Training",
+                description: "Canva Course Payment",
                 order_id: orderData.order.id,
                 handler: async function (response) {
                     try {
@@ -236,8 +232,10 @@ const Canva = () => {
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
                                 ...formData,
-                                ...response,
-                            }),
+                                razorpay_payment_id: response.razorpay_payment_id,
+                                razorpay_order_id: response.razorpay_order_id,
+                                razorpay_signature: response.razorpay_signature
+                            })
                         });
 
                         const verifyData = await verifyRes.json();
@@ -249,7 +247,7 @@ const Canva = () => {
                             alert("Payment verification failed.");
                         }
                     } catch (err) {
-                        console.error("Verification error:", err);
+                        console.error(err);
                         alert("Error verifying payment.");
                         setIsLoading(false);
                     }
@@ -257,21 +255,34 @@ const Canva = () => {
                 prefill: {
                     name: formData.fname,
                     email: formData.email,
-                    contact: formData.phone,
+                    contact: formData.phone
                 },
-                theme: {
-                    color: "#3399cc",
-                },
+                theme: { color: "#3399cc" }
             };
 
             const rzp = new window.Razorpay(options);
             rzp.open();
+
         } catch (err) {
-            console.error("Error:", err);
+            console.error(err);
+            alert("Something went wrong.");
             setIsLoading(false);
-            alert("Something went wrong. Please try again.");
         }
     };
+
+            //    button 
+
+    const scrollToForm = (email = "") => {
+    // Scroll to form
+    const formElement = document.getElementById("form-section");
+    formElement.scrollIntoView({ behavior: "smooth" });
+
+    // Prefill email if provided
+    if (email) {
+        setFormData(prev => ({ ...prev, email }));
+    }
+};
+
 
 
     return (
@@ -285,7 +296,7 @@ const Canva = () => {
                     <div className="canoneboxinner">
                         <h1> <IoColorPalette /> Learn Canva &</h1>
                         <h1>Design like a <span>Pro</span></h1>
-                        <p>For Just <span><FaIndianRupeeSign />499!</span></p>
+                        <p>For Just <span>&nbsp; &#8377;499!</span></p>
                         <div className="allconebox">
                             <div className="cone-box cone-box1"><p>Lifetime Access</p> </div>
                             <div className="cone-box cone-box2"><p>Beginner Friendly</p> </div>
@@ -293,7 +304,8 @@ const Canva = () => {
                         </div>
 
                         <p>Start today and create designs that impress without hiring anyone</p>
-                        <button >Get instant Access Now For @499/-</button>
+                        <button onClick={() => scrollToForm()} >Get instant Access Now For @499/-</button>
+                      
 
                     </div>
                 </div>
@@ -402,7 +414,7 @@ const Canva = () => {
                 <h1>For Just  <MdCurrencyRupee />499!</h1>
                 <h3>One-Time Payment</h3>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> No monthly fees</p>
-                <button>Get instant Access Now For @499/-</button>
+                <button onClick={()=>scrollToForm()} >Get instant Access Now For @499/-</button>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> No expiry </p>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> Learn once, use forever </p>
                 <b><AiFillThunderbolt /> Limited seats at <MdCurrencyRupee />499- price may increase soon!  </b>
@@ -473,42 +485,18 @@ const Canva = () => {
 
             {/* Canregister  */}
 
-            <div className="canregis">
+            <div className="canregis" id="form-section">
                 <h1>Ready to design like a pro?</h1>
                 <p><IoIosRocket /> This is your chance to learn Canva once and use it forever. Enter your valid Email Id</p>
 
                 <form onSubmit={handleSubmit}>
                     <label>Full Name</label>
-                    <input
-                        type="text"
-                        name="fname"
-                        placeholder="Enter your full name"
-                        value={formData.fname}
-                        onChange={handleChange}
-                    />
-
+                    <input type="text" name="fname" placeholder="Enter your full name" value={formData.fname} onChange={handleChange} required />
                     <label>Email Address*</label>
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Enter your email address"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-
+                    <input type="email" name="email" placeholder="Enter your email address" value={formData.email} onChange={handleChange} required />
                     <label>Phone Number</label>
-                    <input
-                        type="text"
-                        name="phone"
-                        placeholder="Enter your phone number"
-                        value={formData.phone}
-                        onChange={handleChange}
-                    />
-
-                    <button type="submit" disabled={isLoading}>
-                        {isLoading ? "Processing..." : "Access Now For ₹499/-"}
-                    </button>
+                    <input type="text" name="phone" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} required />
+                    <button type="submit" disabled={isLoading}>{isLoading ? "Processing..." : "Access Now For ₹499/-"}</button>
                 </form>
             </div>
 
