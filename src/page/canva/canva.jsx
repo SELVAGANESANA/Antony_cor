@@ -237,12 +237,11 @@ const Canva = () => {
                                 razorpay_signature: response.razorpay_signature
                             })
                         });
-
                         const verifyData = await verifyRes.json();
                         setIsLoading(false);
 
                         if (verifyData.success) {
-                            navigate(`/payment-success?link=${encodeURIComponent(verifyData.receiptUrl)}`);
+                            navigate(`/courselink?link=${encodeURIComponent(verifyData.receiptUrl)}`);
                         } else {
                             alert("Payment verification failed.");
                         }
@@ -310,6 +309,7 @@ const Canva = () => {
                     </div>
                 </div>
             </div>
+
 
             {/* Cantwo  */}
 

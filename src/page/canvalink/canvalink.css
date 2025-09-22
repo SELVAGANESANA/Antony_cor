@@ -1,0 +1,37 @@
+.canvalinkall {
+  text-align: center;
+  padding: 20px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvalinkall h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #06c167;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background-color: #049c4b;
+}
+
+.email-info {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #555;
+}
