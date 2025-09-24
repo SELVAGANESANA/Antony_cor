@@ -208,7 +208,7 @@ const Canva = () => {
             const orderRes = await fetch("http://localhost:5000/create-order", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ amount: 499 })
+                body: JSON.stringify({ amount: 1 })
             });
             const orderData = await orderRes.json();
             if (!orderData.success) {
