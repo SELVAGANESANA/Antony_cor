@@ -219,7 +219,7 @@ const Canva = () => {
 
             // Razorpay checkout options
             const options = {
-                key: "rzp_test_v3gEhWzOtCcolK", // Replace with your key
+                key: "rzp_live_gfoS1OjC8tvWjP", // Replace with your key
                 amount: orderData.order.amount,
                 currency: "INR",
                 name: "Canva Pro Training",
