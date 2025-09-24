@@ -205,7 +205,7 @@ const Canva = () => {
 
         try {
             // Create order
-            const orderRes = await fetch("http://localhost:5000/create-order", {
+            const orderRes = await fetch("https://appsail-50033875785.development.catalystappsail.in/create-order", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ amount: 1 })
@@ -227,7 +227,7 @@ const Canva = () => {
                 order_id: orderData.order.id,
                 handler: async function (response) {
                     try {
-                        const verifyRes = await fetch("http://localhost:5000/verify-payment", {
+                        const verifyRes = await fetch("https://appsail-50033875785.development.catalystappsail.in/verify-payment", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({
