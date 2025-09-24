@@ -11,6 +11,121 @@
     --para: rgb(66, 66, 66);
 }
 
+.overallcan {
+    position: relative;
+}
+
+.fixedbutton{
+    position:fixed;
+    z-index: 300;
+    right: 50px;
+    bottom: 100px;
+}
+
+.fixedbutton button{
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color:darkblue;
+    color: white;
+    font-size: 17px;
+    animation-name: fixbu;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.fixedbutton button:hover{
+    background-color: rgb(46, 46, 127);
+    
+}
+
+
+
+/* @keyframes fixbu {
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 1.1;
+    }
+} */
+
+
+/* Popup container (hidden by default) */
+.registercan {
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* center on screen */
+    z-index: 999;
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+
+    /* Glassmorphism styles */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+     /* white text looks good on glass */
+    animation-name: regi;
+    animation-duration: 2s;
+}
+
+
+
+.registercan input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.popup-overlay {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+}
+
+
+
+/* When active (show popup) */
+.registercan.active {
+    display: flex;
+     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    padding: 2px 5px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* original code  */
 
 .canone {
 
@@ -46,7 +161,7 @@
     animation-duration: 2s;
 }
 
-@keyframes canone {
+/* @keyframes canone {
     0% {
         opacity: 0;
         width: 50px;
@@ -55,7 +170,7 @@
     100% {
         width: 700px;
         opacity: 1;
-        /* color: transparent; */
+        
     }
 
 }
@@ -69,7 +184,7 @@
         scale: 1;
 
     }
-}
+} */
 
 .allconebox {
     width: 100%;
@@ -597,6 +712,16 @@ form button {
 
 
 
+.registercan form input {
+    /* background: rgba(10, 10, 10, 0.7);   */
+    /* background-color: red; */
+    background-color: purple;
+    border: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+}
 
 
 /* Media Queries for Responsive Design */

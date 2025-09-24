@@ -23,7 +23,7 @@ import { GoInfinity } from "react-icons/go";
 import { GiLaurelsTrophy } from "react-icons/gi";
 import { GiDrippingStar } from "react-icons/gi";
 const Canva = () => {
-     const navigate = useNavigate();
+    const navigate = useNavigate();
     const canthree = ["Eye-catching social media posts",
         "YouTube thumbnails & digital graphics",
         "Flyers, posters & banners for events",
@@ -182,7 +182,7 @@ const Canva = () => {
         text: "NO- the free version is enough"
     }
     ];
-
+    const [isOpen, setIsOpen] = useState(false);
     const [formData, setFormData] = useState({
         fname: "",
         email: "",
@@ -191,7 +191,7 @@ const Canva = () => {
     });
 
     const [isLoading, setIsLoading] = useState(false);
-   
+
 
     // Handle input changes
     const handleChange = (e) => {
@@ -199,7 +199,7 @@ const Canva = () => {
     };
 
     // Razorpay integration
-   const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
 
@@ -269,23 +269,27 @@ const Canva = () => {
         }
     };
 
-            //    button 
+    //    button 
 
     const scrollToForm = (email = "") => {
-    // Scroll to form
-    const formElement = document.getElementById("form-section");
-    formElement.scrollIntoView({ behavior: "smooth" });
+        // Scroll to form
+        const formElement = document.getElementById("form-section");
+        formElement.scrollIntoView({ behavior: "smooth" });
 
-    // Prefill email if provided
-    if (email) {
-        setFormData(prev => ({ ...prev, email }));
-    }
-};
+        // Prefill email if provided
+        if (email) {
+            setFormData(prev => ({ ...prev, email }));
+        }
+    };
 
 
 
     return (
         <div className="overallcan">
+
+        <div className="fixedbutton">
+             <button onClick={() => setIsOpen(true)} >Register</button>
+        </div>
 
             {/* Canone  */}
 
@@ -303,8 +307,8 @@ const Canva = () => {
                         </div>
 
                         <p>Start today and create designs that impress without hiring anyone</p>
-                        <button onClick={() => scrollToForm()} >Get instant Access Now For @499/-</button>
-                      
+                        <button onClick={() => setIsOpen(true)} >Get instant Access Now For @499/-</button>
+
 
                     </div>
                 </div>
@@ -414,7 +418,7 @@ const Canva = () => {
                 <h1>For Just  <MdCurrencyRupee />499!</h1>
                 <h3>One-Time Payment</h3>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> No monthly fees</p>
-                <button onClick={()=>scrollToForm()} >Get instant Access Now For @499/-</button>
+                <button onClick={() => setIsOpen(true)} >Get instant Access Now For @499/-</button>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> No expiry </p>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> Learn once, use forever </p>
                 <b><AiFillThunderbolt /> Limited seats at <MdCurrencyRupee />499- price may increase soon!  </b>
@@ -499,6 +503,53 @@ const Canva = () => {
                     <button type="submit" disabled={isLoading}>{isLoading ? "Processing..." : "Access Now For ₹499/-"}</button>
                 </form>
             </div>
+
+
+
+                
+                <div className={`registercan ${isOpen ? "active" : ""}`}>
+                    <form onSubmit={handleSubmit}>
+                        {/* Close Button */}
+                        <span className="close-btn" onClick={() => setIsOpen(false)}>
+                            ×
+                        </span>
+
+                        <label>Full Name</label>
+                        <input
+                            type="text"
+                            name="fname"
+                            placeholder="Enter your full name"
+                            value={formData.fname}
+                            onChange={handleChange}
+                            required
+                        />
+
+                        <label>Email Address*</label>
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+
+                        <label>Phone Number</label>
+                        <input
+                            type="text"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            value={formData.phone}
+                            onChange={handleChange}
+                            required
+                        />
+
+                        <button type="submit" disabled={isLoading}>
+                            {isLoading ? "Processing..." : "Access Now For ₹499/-"}
+                        </button>
+                    </form>
+                </div>
+          
 
 
 
