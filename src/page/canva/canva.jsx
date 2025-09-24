@@ -208,7 +208,7 @@ const Canva = () => {
             const orderRes = await fetch("https://appsail-50033875785.development.catalystappsail.in/create-order", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ amount: 10 })
+                body: JSON.stringify({ amount: 499 })
             });
             const orderData = await orderRes.json();
             if (!orderData.success) {
