@@ -23,10 +23,11 @@
 }
 
 .fixedbutton button{
-    padding: 5px 10px;
+    padding: 10px 10px;
     border-radius: 5px;
     border: none;
-    background-color:darkblue;
+    background-color: darkblue;
+    /* background-color:darkblue; */
     color: white;
     font-size: 17px;
     animation-name: fixbu;
@@ -37,6 +38,7 @@
 .fixedbutton:hover button{
     background-color: rgb(46, 46, 127);
     color: black;
+  
     
 }
 
@@ -223,7 +225,7 @@
 
 .canonebox h1 {
     font-size: 50px;
-    font-weight: 500;
+    font-weight: 800;
 }
 
 .canonebox h1 span {
@@ -512,6 +514,12 @@ button:hover {
     color: red;
 }
 
+.canseven h4{
+    color: red;
+    text-align: center;
+    font-size: 25px;
+}
+
 
 /* CanEight  */
 
@@ -671,7 +679,7 @@ button:hover {
 
     padding: 40px 20px;
     background-color: rgb(248, 228, 231);
-
+    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -714,6 +722,8 @@ form button {
     background: var(--linercolor);
 
 }
+
+
 
 
 
@@ -823,7 +833,6 @@ form button {
 }
 
 @media (max-width: 600px) {
-
     .canthre-left,
     .canthre-right {
         width: 100%;
@@ -869,6 +878,9 @@ form button {
     .canseven h1 {
         font-size: 20px;
     }
+    .canseven h4{
+        font-size: 14px;
+    }
 
     .canseven b {
         font-size: 16px;
@@ -879,6 +891,39 @@ form button {
         max-width: 180px;
         padding: 15px;
     }
+    .fixedbutton{
+    /* position:fixed; */
+    z-index: 300;
+    right: 0px;
+    bottom:0%;
+    width: 100%;
+    background-color:transparent;
+    padding-bottom: 10px;
+    display:flex ; 
+    align-items: center;
+    justify-content: center; 
+}
+
+.fixedbutton button{
+    padding: 20px 30px;
+    border-radius: 5px;
+    border: none;
+   
+    color: white;
+    display:flex ; 
+    align-items: center;
+    justify-content: center; 
+    font-size: 17px;
+    animation-name: fixbu;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.fixedbutton:hover button{
+    background-color: rgb(46, 46, 127);
+    color: black;
+    
+}
 }
 
 @media (max-width: 390px) {

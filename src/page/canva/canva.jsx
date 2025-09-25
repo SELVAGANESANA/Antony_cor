@@ -288,7 +288,7 @@ const Canva = () => {
         <div className="overallcan">
 
         <div className="fixedbutton">
-             <button onClick={() => setIsOpen(true)} >Access Now</button>
+             <button onClick={() => setIsOpen(true)} >Get instant access now @499/- with <br /> bonus worth Rs 5000/-</button>
         </div>
 
             {/* Canone  */}
@@ -299,11 +299,11 @@ const Canva = () => {
                     <div className="canoneboxinner">
                         <h1> <IoColorPalette /> Learn Canva &</h1>
                         <h1>Design like a <span>Pro</span></h1>
-                        <p>For Just <span>&nbsp; &#8377;499!</span></p>
+                        <p>For Just <span>&nbsp; @499!</span></p>
                         <div className="allconebox">
-                            <div className="cone-box cone-box1"><p>Lifetime Access</p> </div>
-                            <div className="cone-box cone-box2"><p>Beginner Friendly</p> </div>
-                            <div className="cone-box cone-box3"> <p>100% Practical Course</p> </div>
+                            <div className="cone-box cone-box1"><p> 👉 Lifetime Access</p> </div>
+                            <div className="cone-box cone-box2"><p> 👉 Beginner Friendly</p> </div>
+                            <div className="cone-box cone-box3"> <p>👉 100% Practical Course </p> </div>
                         </div>
 
                         <p>Start today and create designs that impress without hiring anyone</p>
@@ -418,10 +418,10 @@ const Canva = () => {
                 <h1>For Just  <MdCurrencyRupee />499!</h1>
                 <h3>One-Time Payment</h3>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> No monthly fees</p>
-                <button onClick={() => setIsOpen(true)} >Get instant Access Now For @499/-</button>
+                <button onClick={() => setIsOpen(true)} >Get instant Access Now For ₹499/-</button>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> No expiry </p>
                 <p><span style={{ color: "green" }} ><FaCheck /> </span> Learn once, use forever </p>
-                <b><AiFillThunderbolt /> Limited seats at <MdCurrencyRupee />499- price may increase soon!  </b>
+                <h4> <AiFillThunderbolt /> Limited seats at @499/- price may increase soon!  </h4>
             </div>
 
 
