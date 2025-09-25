@@ -288,7 +288,7 @@ const Canva = () => {
         <div className="overallcan">
 
         <div className="fixedbutton">
-             <button onClick={() => setIsOpen(true)} >Register</button>
+             <button onClick={() => setIsOpen(true)} >Access Now</button>
         </div>
 
             {/* Canone  */}

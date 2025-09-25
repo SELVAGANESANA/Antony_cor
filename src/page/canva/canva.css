@@ -34,9 +34,14 @@
     animation-iteration-count: infinite;
 }
 
-.fixedbutton button:hover{
+.fixedbutton:hover button{
     background-color: rgb(46, 46, 127);
+    color: black;
     
+}
+
+.registercan button{
+    font-size: 15px;
 }
 
 
